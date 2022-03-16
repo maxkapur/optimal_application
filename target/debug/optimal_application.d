@@ -1,1 +1,0 @@
-/home/max/rust/optimal_application/target/debug/optimal_application: /home/max/rust/optimal_application/src/io.rs /home/max/rust/optimal_application/src/lib.rs /home/max/rust/optimal_application/src/main.rs /home/max/rust/optimal_application/src/same_costs.rs /home/max/rust/optimal_application/src/varied_costs.rs
