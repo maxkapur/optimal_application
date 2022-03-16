@@ -43,19 +43,20 @@ pub fn application_order_heap(mkt: &SameCostsMarket) -> (Vec<usize>, Vec<f64>) {
 
     for _j in 0..mkt.h {
         // Identify the best school
-        let best_c = cs.pop().unwrap();
+        let best_c = cs.peek().unwrap();
 
         xs.push(best_c.j);
         v += best_c.ft;
         vs.push(v);
 
         cs = BinaryHeap::from_iter(
-            cs.drain().map(|c| 
+            cs.clone().drain().filter(|c| c.j != best_c.j).map(|c| 
                 if c.t <= best_c.t {
                     College{j: c.j, f: c.f, t: c.t * best_c.omf, omf: c.omf, ft: c.ft * best_c.omf}
                 } else {
                     College{j: c.j, f: c.f, t: c.t - best_c.ft, omf: c.omf, ft: c.ft - c.f * best_c.ft}
-                })
+                }
+            )
         );
     }
 
