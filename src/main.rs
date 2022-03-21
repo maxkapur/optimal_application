@@ -30,10 +30,6 @@ fn main() {
 }
 
 
-
-
-
-
 fn rand_exp() -> f64 {
     let mut rng = thread_rng();
     let r: f64 = Standard.sample(&mut rng);
