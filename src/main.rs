@@ -27,6 +27,14 @@ fn main() {
     println!("\nExact DP");
     let (xs, v) = optimal_portfolio_dynamic(&mkt);
     println!("xs = {:?}", xs); println!("v = {}", v);
+
+    println!("\nFPTAS, ε = 0.5");
+    let (xs, v) = optimal_portfolio_fptas(&mkt, 0.5);
+    println!("xs = {:?}", xs); println!("ṽ = {}", v);
+
+    println!("\nFPTAS, ε = 0.05");
+    let (xs, v) = optimal_portfolio_fptas(&mkt, 0.05);
+    println!("xs = {:?}", xs); println!("ṽ = {}", v);
 }
 
 
